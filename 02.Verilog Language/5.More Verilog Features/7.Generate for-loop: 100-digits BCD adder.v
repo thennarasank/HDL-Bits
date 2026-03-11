@@ -5,7 +5,7 @@ module top_module(
     output [399:0] sum );
     wire [100:0] carry;
     assign carry[0] = cin;
-    genvar i;
+    genvar i; 
     generate
         for (i = 0; i < 100; i = i + 1) begin : bcd_chain
             bcd_fadd u_bcd (.a(a[i*4 +: 4]),.b(b[i*4 +: 4]),.cin(carry[i]),.cout(carry[i+1]),.sum(sum[i*4 +: 4]));
